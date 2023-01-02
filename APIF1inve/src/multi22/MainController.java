@@ -347,7 +347,7 @@ public class MainController implements Initializable {
                 Image immagine = new Image("APIF1inve/img/status/no.jpg");
                 ricercaStatusCircuito.setImage(immagine);
                 lab_circuito_selected.setText("/");
-                text_input_circuito.setText("");
+                text_input_circuito.setText("");//l
                 text_input_circuito.setPromptText("Circuito inesistente");
             }
         }
