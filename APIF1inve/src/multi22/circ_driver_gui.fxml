@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -26,5 +28,12 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <TableView fx:id="table_anni" layoutX="277.0" layoutY="322.0" prefHeight="257.0" prefWidth="269.0">
+        <columns>
+          <TableColumn fx:id="col_anno" editable="false" prefWidth="131.0" resizable="false" sortable="false" text="Anno" />
+            <TableColumn fx:id="col_pos_finale" editable="false" prefWidth="134.0" resizable="false" sortable="false" text="Posizione finale" />
+        </columns>
+      </TableView>
+      <Label fx:id="lab_start" alignment="CENTER" layoutX="19.0" layoutY="291.0" prefHeight="17.0" prefWidth="781.0" text="/" />
    </children>
 </Pane>

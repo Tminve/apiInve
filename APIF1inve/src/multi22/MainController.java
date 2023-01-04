@@ -316,14 +316,10 @@ public class MainController implements Initializable {
             text_input_circuito.setText("");
             text_input_circuito.setPromptText("Circuito inesistente");
         } else {
-            input = input.toLowerCase();
-            String firstLetter = input.substring(0, 1);
-            firstLetter = firstLetter.toUpperCase();
-            String restOfString = input.substring(1);
-            String result = firstLetter + restOfString;
+
             boolean esiste = false;
             for (Circuito c : Globali.lst_circuiti){
-                if(c.getCircuitName().contains(result)){
+                if(c.getCircuitName().contains(input)){
                     esiste = true;
                     String circuitId = c.getCircuitId();
                     String circuitName = c.getCircuitName();
@@ -342,7 +338,6 @@ public class MainController implements Initializable {
                 Image immagine = new Image("APIF1inve/img/status/ok.jpg");
                 ricercaStatusCircuito.setImage(immagine);
                 lab_circuito_selected.setText(circuitoSelected.getCircuitName());
-                System.out.println(circuitoSelected.getCircuitName());
             }else {
                 Image immagine = new Image("APIF1inve/img/status/no.jpg");
                 ricercaStatusCircuito.setImage(immagine);

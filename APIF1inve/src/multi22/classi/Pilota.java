@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class Pilota {
 
+
+    private Statistica statistica;
     private String givenName;
     private String driverId;
     private String familyName;
@@ -83,5 +85,13 @@ public class Pilota {
 
     public void setAnnoCamp(String annoCamp) {
         this.annoCamp = annoCamp;
+    }
+
+    public Statistica getStatistica() {
+        return statistica;
+    }
+
+    public void setStatistica(Statistica statistica) {
+        this.statistica = statistica;
     }
 }

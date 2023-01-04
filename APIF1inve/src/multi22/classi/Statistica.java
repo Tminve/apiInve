@@ -1,5 +1,6 @@
 package APIF1inve.src.multi22.classi;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Statistica {
@@ -15,7 +16,14 @@ public class Statistica {
     private String anniAttivit;
     private int totalRaces;
     private double pointsPerRace;
+    private String anno;
+    private String pos_finale;
+    private ArrayList<String> anniAttivi = new ArrayList<>();
 
+
+    public Statistica(){
+
+    }
     public Statistica(Pilota pilota, int totalWins, double totalPoints, int totalWDCs, int totalSeasons, int totalRaces, double pointsPerRace, int totalPodiums, int campionati, String percVittoria,String anniAttivit) {
         this.pilota = pilota;
         this.totalWins = totalWins;
@@ -116,5 +124,29 @@ public class Statistica {
 
     public void setAnniAttivit(String anniAttivit) {
         this.anniAttivit = anniAttivit;
+    }
+
+    public ArrayList<String> getAnniAttivi() {
+        return anniAttivi;
+    }
+
+    public void aggiungiAnno(String anno) {
+        this.anniAttivi.add(anno);
+    }
+
+    public String getAnno() {
+        return anno;
+    }
+
+    public void setAnno(String anno) {
+        this.anno = anno;
+    }
+
+    public String getPos_finale() {
+        return pos_finale;
+    }
+
+    public void setPos_finale(String pos_finale) {
+        this.pos_finale = pos_finale;
     }
 }

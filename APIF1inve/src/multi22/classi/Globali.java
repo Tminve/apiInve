@@ -84,6 +84,8 @@ public class Globali {
 
         }
 
+
+
     }
     public void compila_lst_wdcs() throws IOException {
 
@@ -353,9 +355,16 @@ public class Globali {
         String percVitt = Double.toString(perc)+"%";
 
 
+
+
         String anniAttivit = seasons.get(0) +"-"+seasons.get(seasons.size()-1);
         Statistica stats = new Statistica(pilotaSelected,totalWins,totalPoints,totalWDCs,seasons.size(),totalRaces,totalPoints/totalRaces,totalPodiums,totalWDCs,percVitt,anniAttivit);
 
+        for (String a : seasons){
+            stats.aggiungiAnno(a);
+        }
+
+        pilotaSelected.setStatistica(stats);
 
         return stats;
     }
