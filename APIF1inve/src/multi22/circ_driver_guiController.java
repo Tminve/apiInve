@@ -25,6 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -58,6 +59,10 @@ public class circ_driver_guiController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Stage stage = new Stage();
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+
         col_anno.setCellValueFactory(new PropertyValueFactory<Statistica, String>("anno"));
         col_pos_finale.setCellValueFactory(new PropertyValueFactory<Statistica, String>("pos_finale"));
         if (MainController.circuitoSelected.getCircuitName() == null){

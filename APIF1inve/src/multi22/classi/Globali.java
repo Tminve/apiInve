@@ -79,7 +79,6 @@ public class Globali {
             String nationality = driver.getString("nationality");
 
             Pilota p = new Pilota(givenName,driverId,familyName,dateOfBirth,nationality);
-
             lst_piloti.add(p);
 
         }

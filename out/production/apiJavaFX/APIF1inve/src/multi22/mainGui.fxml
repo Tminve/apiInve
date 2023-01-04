@@ -41,22 +41,20 @@
             <Label text="Nome pilota:" />
             <Label text="Stagioni totali:" GridPane.rowIndex="4" />
             <Label text="Gare totali:" GridPane.rowIndex="5" />
-            <Label text="Podi totali:" GridPane.rowIndex="6" />
-            <Label text="Punti totali:" GridPane.rowIndex="7" />
-            <Label text="Vittorie totali" GridPane.rowIndex="8" />
-            <Label prefHeight="12.0" prefWidth="132.0" text="Media punti per gara" GridPane.rowIndex="9" />
+            <Label text="Punti totali:" GridPane.rowIndex="6" />
+            <Label text="Vittorie totali" GridPane.rowIndex="7" />
+            <Label prefHeight="12.0" prefWidth="132.0" text="Media punti per gara" GridPane.rowIndex="8" />
             <Label fx:id="lab_nome" prefHeight="17.0" prefWidth="364.0" text="/" GridPane.columnIndex="1" />
             <Label fx:id="lab_stagioni" text="/" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label fx:id="lab_gare" text="/" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label fx:id="lab_podi" text="/" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label fx:id="lab_punti" text="/" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label fx:id="lab_vittorie" text="/" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label fx:id="lab_media" text="/" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label fx:id="lab_punti" text="/" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="lab_vittorie" text="/" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label fx:id="lab_media" text="/" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <Label prefHeight="17.0" prefWidth="149.0" text="Campionati mondiali totali:" GridPane.rowIndex="2" />
             <Label fx:id="lab_wdcs" prefHeight="17.0" prefWidth="136.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Nome pilota:" />
-            <Label prefHeight="12.0" prefWidth="132.0" text="\% di vittoria:" GridPane.rowIndex="10" />
-            <Label fx:id="lab_perc_win" prefHeight="17.0" prefWidth="136.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label prefHeight="12.0" prefWidth="132.0" text="\% di vittoria:" GridPane.rowIndex="9" />
+            <Label fx:id="lab_perc_win" prefHeight="17.0" prefWidth="136.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <Label prefHeight="12.0" prefWidth="132.0" text="Nazionalità" GridPane.rowIndex="3" />
             <Label fx:id="lab_nazion" text="/" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label prefHeight="12.0" prefWidth="132.0" text="Anni di attività:" GridPane.rowIndex="1" />

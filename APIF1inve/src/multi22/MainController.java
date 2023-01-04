@@ -20,6 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -72,8 +73,6 @@ public class MainController implements Initializable {
     @FXML
     Label lab_gare;
     @FXML
-    Label lab_podi;
-    @FXML
     Label lab_perc_win;
 
     @FXML
@@ -119,7 +118,6 @@ public class MainController implements Initializable {
         table.setItems(campioni);
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void clickSpecifichePilota(ActionEvent actionEvent) throws IOException, CloneNotSupportedException {
 
         compilaLabelsDefault();
@@ -154,14 +152,12 @@ public class MainController implements Initializable {
 
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void compilaLabels(Statistica s) {
 
         lab_wdcs.setText(Integer.toString(s.getTotalWDCs()));
         lab_nome.setText(s.getPilota().getGivenName() + " " + s.getPilota().getFamilyName());
         lab_stagioni.setText(Integer.toString(s.getTotalSeasons()));
         lab_gare.setText(Integer.toString(s.getTotalRaces()));
-        lab_podi.setText(Integer.toString(s.getTotalPodiums()));
         lab_punti.setText(Double.toString(s.getTotalPoints()));
         lab_vittorie.setText(Integer.toString(s.getTotalWins()));
         double rounded = (double) Math.round(s.getPointsPerRace() * 100) / 100;
@@ -173,14 +169,12 @@ public class MainController implements Initializable {
         imageViewNazioni.setImage(immagine);
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void compilaLabelsDefault() {
 
         lab_wdcs.setText("/");
         lab_nome.setText("/");
         lab_stagioni.setText("/");
         lab_gare.setText("/");
-        lab_podi.setText("/");
         lab_punti.setText("/");
         lab_vittorie.setText("/");
         lab_attivi.setText("/");
@@ -189,7 +183,6 @@ public class MainController implements Initializable {
         lab_perc_win.setText("/");
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void random(ActionEvent actionEvent) throws IOException, CloneNotSupportedException {
         Random random = new Random();
 
@@ -206,7 +199,6 @@ public class MainController implements Initializable {
         compilaLabels(statistica);
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void clickCercaNazioni(ActionEvent actionEvent) throws IOException {
 
         String input = text_input_nazione.getText();
@@ -239,7 +231,6 @@ public class MainController implements Initializable {
         }
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void compilaObservableCampioni() {
 
 // Imposta la politica di ridimensionamento delle colonne su CONSTRAINED_RESIZE_POLICY
@@ -249,7 +240,6 @@ public class MainController implements Initializable {
         }
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void compilaObservableCircuiti(String nazione) {
         circuiti.clear();
         for (Circuito c : Globali.lst_circuiti) {
@@ -259,7 +249,6 @@ public class MainController implements Initializable {
         }
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         col_anno.setCellValueFactory(new PropertyValueFactory<Wdc, String>("year"));
@@ -286,26 +275,19 @@ public class MainController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
-    //brbrbr
-
     public void clickMostra(ActionEvent actionEvent){
         try {
-            // Carica il file FXML della finestra di destinazione
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("circ_driver_gui.fxml"));
-            Parent root = loader.load();
+                    Stage stage = new Stage();
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    Parent root = FXMLLoader.load(getClass().getResource("circ_driver_gui.fxml"));
+                    stage.setScene(new Scene(root));
+                    stage.show();
 
-            // Crea una nuova finestra e imposta il contenuto come il nodo radice del file FXML
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException ex) {
+            throw new RuntimeException(ex);
         }
 
     }
-
     public void clickCercaCircuito(ActionEvent actionEvent){
         String input = text_input_circuito.getText();
 
@@ -319,7 +301,7 @@ public class MainController implements Initializable {
 
             boolean esiste = false;
             for (Circuito c : Globali.lst_circuiti){
-                if(c.getCircuitName().contains(input)){
+                if((c.getCircuitName().contains(input) )|| (c.getCircuitId().equalsIgnoreCase(input))){
                     esiste = true;
                     String circuitId = c.getCircuitId();
                     String circuitName = c.getCircuitName();
@@ -348,7 +330,6 @@ public class MainController implements Initializable {
         }
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
-
     public void randomNazione(ActionEvent actionEvent){
         Random random = new Random();
 
