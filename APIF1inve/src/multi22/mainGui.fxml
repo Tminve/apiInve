@@ -105,5 +105,6 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
+      <Button layoutX="870.0" layoutY="432.0" mnemonicParsing="false" onAction="#randomCircuito" prefHeight="67.0" prefWidth="58.0" text="Casuale" />
    </children>
 </AnchorPane>

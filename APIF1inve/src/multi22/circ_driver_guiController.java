@@ -64,7 +64,8 @@ public class circ_driver_guiController implements Initializable
 
         col_anno.setCellValueFactory(new PropertyValueFactory<Statistica, String>("anno"));
         col_pos_finale.setCellValueFactory(new PropertyValueFactory<Statistica, String>("pos_finale"));
-        if (MainController.circuitoSelected.getCircuitName() == null){
+
+        if (MainController.circuitoSelected.getCircuitName() == null ){
             lab_nome_circuito.setText("Nessun circuito selezionato");
         }else {
             lab_nome_circuito.setText(MainController.circuitoSelected.getCircuitName());

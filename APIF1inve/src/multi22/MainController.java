@@ -340,5 +340,16 @@ public class MainController implements Initializable {
         table2.setItems(circuiti);
         lab_n_api.setText(Integer.toString(Globali.nAPI));
     }
+    public void randomCircuito(ActionEvent actionEvent){
+        Random random = new Random();
 
+        int randomInt = random.nextInt(Globali.lst_circuiti.size());
+        String randomCIrcuitoId = Globali.lst_circuiti.get(randomInt).getCircuitId();
+
+        text_input_circuito.setText(Globali.lst_circuiti.get(randomInt).getCircuitName());
+
+        circuitoSelected = Globali.lst_circuiti.get(randomInt);
+
+        lab_n_api.setText(Integer.toString(Globali.nAPI));
+    }
 }
