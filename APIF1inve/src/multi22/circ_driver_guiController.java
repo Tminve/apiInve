@@ -89,11 +89,7 @@ public class circ_driver_guiController implements Initializable
 
         col_anno.setStyle("-fx-alignment: CENTER;");
         col_pos_finale.setStyle("-fx-alignment: CENTER;");
-        try {
-            immaginiApi();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
     }
     public void getCircuitiInAnno(String anno) throws IOException {
         String urlString = "http://ergast.com/api/f1/"+anno+"/drivers/"+pilotaSelezionato.getDriverId()+"/circuits.json?limit=15000";
@@ -196,29 +192,6 @@ public class circ_driver_guiController implements Initializable
 
     }
     private static final String API_KEY = "563492ad6f91700001000001cc10eabc603149dcbfe9ec20eee0050c";
-    public void immaginiApi() throws IOException {
-        // Set the search query
-        String query = "Gatti";
 
-        // Send the HTTP request to the Pexels API
-        URL url = new URL("https://api.pexels.com/v1/search?query=" + query + "&per_page=10&page=1");
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        con.setRequestMethod("GET");
-        con.setRequestProperty("Authorization", API_KEY);
-
-        // Read the response from the Pexels API
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuilder content = new StringBuilder();
-        while ((inputLine = in.readLine()) != null) {
-            content.append(inputLine);
-        }
-        in.close();
-        con.disconnect();
-
-        // Print the search results
-        System.out.println(content.toString());
-
-    }
 }
 
