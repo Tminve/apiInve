@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: APIF1inve.src.multi22.MainApp
+
